@@ -10,16 +10,17 @@ namespace model
     public class SupplyCenter
     {
 
-<<<<<<< HEAD
         public const String DATA_PATH = "..\\..\\..\\DATA_PreciosCombustibles.csv";
 
-        public SupplyCenter() { }
 
 
+        /**
+         * 
+         *  No se pone la ruta absoluta, sino la relativa    Ojo !!! 
+         */
 
 
-=======
-        private String Path = "C:\\Users\\osvan\\source\\repos\\price-gasoline-gmaps\\DATA_PreciosCombustibles";
+       // private String Path = "C:\\Users\\osvan\\source\\repos\\price-gasoline-gmaps\\DATA_PreciosCombustibles";
         private List<PetrolStation> petrolStation;
 
         public SupplyCenter()
@@ -32,7 +33,7 @@ namespace model
 
         public void loadData()
         {
-            StreamReader sr = new StreamReader(Path);
+            StreamReader sr = new StreamReader(DATA_PATH);
             string line = sr.ReadLine();
             line = sr.ReadLine();
             ///Inicio
@@ -65,7 +66,7 @@ namespace model
 
         private void loadDepartamentLocation()
         {
-            StreamReader sr = new StreamReader(Path);
+            StreamReader sr = new StreamReader(DATA_PATH);
             string line = sr.ReadLine();
             line = sr.ReadLine();
             ///Inicio
@@ -95,16 +96,6 @@ namespace model
         public void addPetrolStation(string month, string nameDepartment, string latitude, string longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price) {
            
         }
-
->>>>>>> master
-
-
-
-
-
-
-
-
 
 
     }
