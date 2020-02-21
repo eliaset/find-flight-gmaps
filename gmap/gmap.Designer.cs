@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btSearchStation = new System.Windows.Forms.Button();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.btClearFilter = new System.Windows.Forms.Button();
+            this.btClearStation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -39,7 +44,7 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(12, 12);
+            this.gMapControl1.Location = new System.Drawing.Point(3, 4);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -53,25 +58,78 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(524, 426);
+            this.gMapControl1.Size = new System.Drawing.Size(611, 518);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(654, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(210, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // btSearchStation
+            // 
+            this.btSearchStation.Location = new System.Drawing.Point(704, 87);
+            this.btSearchStation.Name = "btSearchStation";
+            this.btSearchStation.Size = new System.Drawing.Size(109, 23);
+            this.btSearchStation.TabIndex = 2;
+            this.btSearchStation.Text = "Buscar Estación";
+            this.btSearchStation.UseVisualStyleBackColor = true;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(704, 222);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter.TabIndex = 3;
+            // 
+            // btClearFilter
+            // 
+            this.btClearFilter.Location = new System.Drawing.Point(726, 277);
+            this.btClearFilter.Name = "btClearFilter";
+            this.btClearFilter.Size = new System.Drawing.Size(75, 23);
+            this.btClearFilter.TabIndex = 4;
+            this.btClearFilter.Text = "Limpiar";
+            this.btClearFilter.UseVisualStyleBackColor = true;
+            // 
+            // btClearStation
+            // 
+            this.btClearStation.Location = new System.Drawing.Point(726, 116);
+            this.btClearStation.Name = "btClearStation";
+            this.btClearStation.Size = new System.Drawing.Size(75, 23);
+            this.btClearStation.TabIndex = 5;
+            this.btClearStation.Text = "Limpiar";
+            this.btClearStation.UseVisualStyleBackColor = true;
+            // 
+            // gmap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(913, 534);
+            this.Controls.Add(this.btClearStation);
+            this.Controls.Add(this.btClearFilter);
+            this.Controls.Add(this.cbFilter);
+            this.Controls.Add(this.btSearchStation);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.gMapControl1);
-            this.Name = "Form1";
+            this.Name = "gmap";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btSearchStation;
+        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.Button btClearFilter;
+        private System.Windows.Forms.Button btClearStation;
     }
 }
 
