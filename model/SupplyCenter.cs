@@ -14,13 +14,7 @@ namespace model
 
 
 
-        /**
-         * 
-         *  No se pone la ruta absoluta, sino la relativa    Ojo !!! 
-         */
 
-
-       // private String Path = "C:\\Users\\osvan\\source\\repos\\price-gasoline-gmaps\\DATA_PreciosCombustibles";
         private List<PetrolStation> petrolStation;
 
         public SupplyCenter()
@@ -43,8 +37,6 @@ namespace model
 
                 String month = elements[0];
                 String nameDepartment = elements[1];
-                double latitude = 0;
-                double longitude = 0;
                 String nameMunicipality = elements[2];
                 String tradeName = elements[3];
                 string flag = elements[4];
@@ -53,7 +45,7 @@ namespace model
                 double price = Double.Parse(elements[7]);
 
 
-                petrolStation.Add(new PetrolStation(month, nameDepartment, latitude, longitude, nameMunicipality, tradeName, flag, addres, typeProduct, price));
+                petrolStation.Add(new PetrolStation(month, nameDepartment, nameMunicipality, tradeName, flag, addres, typeProduct, price));
                 line = sr.ReadLine();
             }///Fin
 
@@ -62,35 +54,20 @@ namespace model
 
         }
 
-
-
-        private void loadDepartamentLocation()
-        {
-            StreamReader sr = new StreamReader(DATA_PATH);
-            string line = sr.ReadLine();
-            line = sr.ReadLine();
-            ///Inicio
-            while (line != null)
+        public List<PetrolStation> SearchByStation(string name){
+            List<PetrolStation> aux = new List<PetrolStation>();
+          
+            foreach (PetrolStation value in aux)
             {
-                String[] elements = line.Split(',');
+                if (value.Flag.Equals(name))
+                {
+                    aux.Add(value);
+                }
+            }
+            
+          return aux;
 
-                String month = elements[0];
-                String nameDepartment = elements[1];
-                double latitude = 0;
-                double longitude = 0;
-                String nameMunicipality = elements[2];
-                String tradeName = elements[3];
-                string flag = elements[4];
-                String addres = elements[5];
-                String typeProduct = elements[6];
-                double price = Double.Parse(elements[7]);
-
-
-                petrolStation.Add(new PetrolStation(month, nameDepartment, latitude, longitude, nameMunicipality, tradeName, flag, addres, typeProduct, price));
-                line = sr.ReadLine();
-            }///Fin
         }
-
 
 
         public void addPetrolStation(string month, string nameDepartment, string latitude, string longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price) {

@@ -24,12 +24,10 @@ namespace model
         private double price;
 
    
-        public PetrolStation(string month, string nameDepartment, double latitude, double longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price)
+        public PetrolStation(string month, string nameDepartment, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price)
         {
             this.month = month;
             this.nameDepartment = nameDepartment;
-            this.latitude = latitude;
-            this.longitude = longitude;
             this.nameMunicipality = nameMunicipality;
             this.tradeName = tradeName;
             this.flag = flag;

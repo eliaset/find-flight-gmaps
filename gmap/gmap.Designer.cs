@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.gMapC = new GMap.NET.WindowsForms.GMapControl();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btSearchStation = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -36,32 +36,32 @@
             this.btClearStation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // gMapControl1
+            // gMapC
             // 
-            this.gMapControl1.Bearing = 0F;
-            this.gMapControl1.CanDragMap = true;
-            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gMapControl1.GrayScaleMode = false;
-            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(2, 4);
-            this.gMapControl1.MarkersEnabled = true;
-            this.gMapControl1.MaxZoom = 2;
-            this.gMapControl1.MinZoom = 2;
-            this.gMapControl1.MouseWheelZoomEnabled = true;
-            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapControl1.Name = "gMapControl1";
-            this.gMapControl1.NegativeMode = false;
-            this.gMapControl1.PolygonsEnabled = true;
-            this.gMapControl1.RetryLoadTile = 0;
-            this.gMapControl1.RoutesEnabled = true;
-            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(615, 527);
-            this.gMapControl1.TabIndex = 0;
-            this.gMapControl1.Zoom = 0D;
-            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
+            this.gMapC.Bearing = 0F;
+            this.gMapC.CanDragMap = true;
+            this.gMapC.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapC.GrayScaleMode = false;
+            this.gMapC.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapC.LevelsKeepInMemmory = 5;
+            this.gMapC.Location = new System.Drawing.Point(2, 4);
+            this.gMapC.MarkersEnabled = true;
+            this.gMapC.MaxZoom = 2;
+            this.gMapC.MinZoom = 2;
+            this.gMapC.MouseWheelZoomEnabled = true;
+            this.gMapC.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapC.Name = "gMapC";
+            this.gMapC.NegativeMode = false;
+            this.gMapC.PolygonsEnabled = true;
+            this.gMapC.RetryLoadTile = 0;
+            this.gMapC.RoutesEnabled = true;
+            this.gMapC.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapC.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapC.ShowTileGridLines = false;
+            this.gMapC.Size = new System.Drawing.Size(615, 527);
+            this.gMapC.TabIndex = 0;
+            this.gMapC.Zoom = 0D;
+            this.gMapC.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // textBox1
             // 
@@ -119,9 +119,10 @@
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.btSearchStation);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.gMapControl1);
+            this.Controls.Add(this.gMapC);
             this.Name = "gmap";
-            this.Text = "Form1";
+            this.Text = "Map";
+            this.Load += new System.EventHandler(this.gmap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +130,7 @@
 
         #endregion
 
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private GMap.NET.WindowsForms.GMapControl gMapC;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btSearchStation;
         private System.Windows.Forms.ComboBox cbFilter;

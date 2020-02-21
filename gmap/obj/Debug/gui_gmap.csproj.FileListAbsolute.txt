@@ -4,3 +4,17 @@ C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.Properties.Re
 C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gui_gmap.csproj.GenerateResource.cache
 C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.exe
 C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.pdb
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\gmap.exe.config
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\gmap.exe
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\gmap.pdb
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\GMap.NET.Core.dll
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\model.dll
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\bin\Debug\model.pdb
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gui_gmap.csprojAssemblyReference.cache
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.gmap.resources
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.Properties.Resources.resources
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gui_gmap.csproj.GenerateResource.cache
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gui_gmap.csproj.CopyComplete
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.exe
+C:\Users\osvan\Source\Repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.pdb
