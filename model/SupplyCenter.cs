@@ -33,7 +33,7 @@ namespace model
             ///Inicio
             while (line != null)
             {
-                String[] elements = line.Split(',');
+                String[] elements = line.Split(';');
 
                 String month = elements[0];
                 String nameDepartment = elements[1];
@@ -42,7 +42,8 @@ namespace model
                 string flag = elements[4];
                 String addres = elements[5];
                 String typeProduct = elements[6];
-                double price = Double.Parse(elements[7]);
+                String[] values = elements[7].Split(' ');
+                double price = Double.Parse(values[1]);
 
 
                 petrolStation.Add(new PetrolStation(month, nameDepartment, nameMunicipality, tradeName, flag, addres, typeProduct, price));
@@ -53,7 +54,7 @@ namespace model
 
 
         }
-
+        /**
         public List<PetrolStation> SearchByStation(string name){
             List<PetrolStation> aux = new List<PetrolStation>();
           
@@ -68,7 +69,7 @@ namespace model
           return aux;
 
         }
-
+        **/
 
         public void addPetrolStation(string month, string nameDepartment, string latitude, string longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price) {
            

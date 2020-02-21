@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using model;
 
@@ -18,11 +11,14 @@ namespace gmap
 {
     public partial class gmap : Form
     {
-
+        /// <summary>
+        /// Relacion con el modelo.
+        /// </summary>
         private SupplyCenter supplyCenter;
         private GMarkerGoogle marker;
         private GMapOverlay markerOverlay;
-        private GMapRoute route;
+ 
+
 
 
         public gmap()
@@ -40,7 +36,7 @@ namespace gmap
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-      
+
 
         }
 
@@ -66,43 +62,67 @@ namespace gmap
 
         private void gmap_Load(object sender, EventArgs e)
         {
-            /**
-            gMapC.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
-            **/
-            gMapC.MapProvider = GMapProviders.GoogleMap;
+            //Elementos de inicio Gmap
+            gMapC.DragButton = MouseButtons.Left;
+            gMapC.CanDragMap = true;
+            gMapC.MapProvider = GMap.NET.MapProviders.OpenCycleMapProvider.Instance;
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapC.Position = new GMap.NET.PointLatLng(4.570868, -74.2973328);
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapC.MinZoom = 2;
             gMapC.MaxZoom = 18;
             gMapC.Zoom = 5;
+            //Fin
+
+
+            supplyCenter.loadData();
 
 
 
-           
+            AddMarker(new PointLatLng(4.570868, -74.2973328), GMarkerGoogleType.green);
+            AddMarker(new PointLatLng(10.9685402, -74.7813187), GMarkerGoogleType.red);
 
-
-            //geocodificación
-            GeoCoderStatusCode statusCode;
-            string dirrecion = "Cali";
-            var pointLatng = GoogleMapProvider.Instance.GetPoint(dirrecion.Trim(), out statusCode);
-          
-            if (statusCode == GeoCoderStatusCode.G_GEO_SUCCESS)
-            {
-                String lat = pointLatng?.Lat.ToString();
-                String lng = pointLatng?.Lng.ToString();
-                markerOverlay = new GMapOverlay("Marcador");
-                marker = new GMarkerGoogle(new PointLatLng(Double.Parse(lat), Double.Parse(lng)), GMarkerGoogleType.green);
-                markerOverlay.Markers.Add(marker);
-
-                gMapC.Overlays.Add(markerOverlay);
-                MessageBox.Show("entre");
-            }
-           
-    
+             
 
            
+             
+
+
+
+
 
 
         }
+
+
+
+        private void AddMarker(PointLatLng pointToAdd, GMarkerGoogleType gMarkerGoogleType)
+        {
+            var markers = new GMapOverlay("markers");
+            var marker = new GMarkerGoogle(pointToAdd,gMarkerGoogleType);
+            markers.Markers.Add(marker);
+            gMapC.Overlays.Add(markers);
+
+        }
+
+       
+
+
+
+
+        private void Geocoding(string nameDepartament, string municipality)
+        {
+         //geocodificación
+            GeoCoderStatusCode statusCode;
+            var dirrecion =nameDepartament+" "+municipality;
+            var pointLatng = OpenCycleMapProvider.Instance.GetPoint(dirrecion.Trim(), out statusCode);
+            
+            var lat = pointLatng?.Lat.ToString();
+            var lng = pointLatng?.Lng.ToString();
+            AddMarker(new PointLatLng(Double.Parse(lat), Double.Parse(lng)), GMarkerGoogleType.green);
+        }
+    
+
+
     }
 }
