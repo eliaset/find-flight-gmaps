@@ -1,0 +1,11 @@
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\bin\Debug\gmap.exe.config
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\bin\Debug\gmap.exe
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\bin\Debug\gmap.pdb
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\bin\Debug\GMap.NET.Core.dll
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.csprojAssemblyReference.cache
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.Properties.Resources.resources
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.csproj.GenerateResource.cache
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.csproj.CopyComplete
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.exe
+C:\Users\Eli\source\repos\price-gasoline-gmaps\gmap\obj\Debug\gmap.pdb
