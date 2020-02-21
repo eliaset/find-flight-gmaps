@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.gMapC = new GMap.NET.WindowsForms.GMapControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btSearchStation = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.btClearFilter = new System.Windows.Forms.Button();
-            this.btClearStation = new System.Windows.Forms.Button();
+            this.rbMonth = new System.Windows.Forms.RadioButton();
+            this.rbMunicipaly = new System.Windows.Forms.RadioButton();
+            this.rbFlag = new System.Windows.Forms.RadioButton();
+            this.rbProduct = new System.Windows.Forms.RadioButton();
+            this.rbPrice = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btFilter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gMapC
@@ -63,27 +67,10 @@
             this.gMapC.Zoom = 0D;
             this.gMapC.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(654, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // btSearchStation
-            // 
-            this.btSearchStation.Location = new System.Drawing.Point(704, 87);
-            this.btSearchStation.Name = "btSearchStation";
-            this.btSearchStation.Size = new System.Drawing.Size(109, 23);
-            this.btSearchStation.TabIndex = 2;
-            this.btSearchStation.Text = "Buscar Estación";
-            this.btSearchStation.UseVisualStyleBackColor = true;
-            this.btSearchStation.Click += new System.EventHandler(this.btSearchStation_Click);
-            // 
             // cbFilter
             // 
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(704, 222);
+            this.cbFilter.Location = new System.Drawing.Point(701, 410);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 3;
@@ -91,7 +78,7 @@
             // 
             // btClearFilter
             // 
-            this.btClearFilter.Location = new System.Drawing.Point(726, 277);
+            this.btClearFilter.Location = new System.Drawing.Point(723, 474);
             this.btClearFilter.Name = "btClearFilter";
             this.btClearFilter.Size = new System.Drawing.Size(75, 23);
             this.btClearFilter.TabIndex = 4;
@@ -99,26 +86,95 @@
             this.btClearFilter.UseVisualStyleBackColor = true;
             this.btClearFilter.Click += new System.EventHandler(this.btClearFilter_Click);
             // 
-            // btClearStation
+            // rbMonth
             // 
-            this.btClearStation.Location = new System.Drawing.Point(726, 116);
-            this.btClearStation.Name = "btClearStation";
-            this.btClearStation.Size = new System.Drawing.Size(75, 23);
-            this.btClearStation.TabIndex = 5;
-            this.btClearStation.Text = "Limpiar";
-            this.btClearStation.UseVisualStyleBackColor = true;
-            this.btClearStation.Click += new System.EventHandler(this.btClearStation_Click);
+            this.rbMonth.AutoSize = true;
+            this.rbMonth.Location = new System.Drawing.Point(723, 277);
+            this.rbMonth.Name = "rbMonth";
+            this.rbMonth.Size = new System.Drawing.Size(45, 17);
+            this.rbMonth.TabIndex = 6;
+            this.rbMonth.TabStop = true;
+            this.rbMonth.Text = "Mes";
+            this.rbMonth.UseVisualStyleBackColor = true;
+            this.rbMonth.CheckedChanged += new System.EventHandler(this.rbMonth_CheckedChanged);
+            // 
+            // rbMunicipaly
+            // 
+            this.rbMunicipaly.AutoSize = true;
+            this.rbMunicipaly.Location = new System.Drawing.Point(723, 301);
+            this.rbMunicipaly.Name = "rbMunicipaly";
+            this.rbMunicipaly.Size = new System.Drawing.Size(70, 17);
+            this.rbMunicipaly.TabIndex = 7;
+            this.rbMunicipaly.TabStop = true;
+            this.rbMunicipaly.Text = "Municipio";
+            this.rbMunicipaly.UseVisualStyleBackColor = true;
+            // 
+            // rbFlag
+            // 
+            this.rbFlag.AutoSize = true;
+            this.rbFlag.Location = new System.Drawing.Point(723, 325);
+            this.rbFlag.Name = "rbFlag";
+            this.rbFlag.Size = new System.Drawing.Size(68, 17);
+            this.rbFlag.TabIndex = 8;
+            this.rbFlag.TabStop = true;
+            this.rbFlag.Text = "Bandera ";
+            this.rbFlag.UseVisualStyleBackColor = true;
+            // 
+            // rbProduct
+            // 
+            this.rbProduct.AutoSize = true;
+            this.rbProduct.Location = new System.Drawing.Point(723, 349);
+            this.rbProduct.Name = "rbProduct";
+            this.rbProduct.Size = new System.Drawing.Size(68, 17);
+            this.rbProduct.TabIndex = 9;
+            this.rbProduct.TabStop = true;
+            this.rbProduct.Text = "Producto";
+            this.rbProduct.UseVisualStyleBackColor = true;
+            // 
+            // rbPrice
+            // 
+            this.rbPrice.AutoSize = true;
+            this.rbPrice.Location = new System.Drawing.Point(723, 373);
+            this.rbPrice.Name = "rbPrice";
+            this.rbPrice.Size = new System.Drawing.Size(55, 17);
+            this.rbPrice.TabIndex = 10;
+            this.rbPrice.TabStop = true;
+            this.rbPrice.Text = "Precio";
+            this.rbPrice.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(732, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Filtros";
+            // 
+            // btFilter
+            // 
+            this.btFilter.Location = new System.Drawing.Point(723, 445);
+            this.btFilter.Name = "btFilter";
+            this.btFilter.Size = new System.Drawing.Size(75, 23);
+            this.btFilter.TabIndex = 12;
+            this.btFilter.Text = "Filtrar";
+            this.btFilter.UseVisualStyleBackColor = true;
             // 
             // gmap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 534);
-            this.Controls.Add(this.btClearStation);
+            this.Controls.Add(this.btFilter);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rbPrice);
+            this.Controls.Add(this.rbProduct);
+            this.Controls.Add(this.rbFlag);
+            this.Controls.Add(this.rbMunicipaly);
+            this.Controls.Add(this.rbMonth);
             this.Controls.Add(this.btClearFilter);
             this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.btSearchStation);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.gMapC);
             this.Name = "gmap";
             this.Text = "Map";
@@ -131,11 +187,15 @@
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gMapC;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btSearchStation;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Button btClearFilter;
-        private System.Windows.Forms.Button btClearStation;
+        private System.Windows.Forms.RadioButton rbMonth;
+        private System.Windows.Forms.RadioButton rbMunicipaly;
+        private System.Windows.Forms.RadioButton rbFlag;
+        private System.Windows.Forms.RadioButton rbProduct;
+        private System.Windows.Forms.RadioButton rbPrice;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btFilter;
     }
 }
 
