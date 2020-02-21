@@ -20,7 +20,6 @@ namespace gmap
  
 
 
-
         public gmap()
         {
             InitializeComponent();
@@ -143,8 +142,32 @@ namespace gmap
             }
 
         }
-    
+
+        private void rbMonth_CheckedChanged(object sender, EventArgs e)
+        {
+
+                cbFilter.Items.Add("ENERO");
+                cbFilter.Items.Add("FEBRERO");
+                cbFilter.Items.Add("MARZO");
+                cbFilter.Items.Add("ABRIL");
+                cbFilter.Items.Add("MAYO");
+                cbFilter.Items.Add("JUNIO");
+                cbFilter.Items.Add("JULIO");
+                cbFilter.Items.Add("AGOSTO");
+                cbFilter.Items.Add("SEPTIEMBRE");
+                cbFilter.Items.Add("OCTUBRE");
+                cbFilter.Items.Add("NOVIEMBRE");
+                cbFilter.Items.Add("DICIEMBRE");
+
+            rbMunicipaly.Enabled=false;
+            rbFlag.Enabled=false;
+            rbPrice.Enabled=false;
+            rbProduct.Enabled=false;
+  
 
 
+
+
+        }
     }
 }
