@@ -10,6 +10,8 @@ namespace model
     {
         private String month;
         private String nameDepartment;
+        private double latitude;
+        private double longitude;
         private String nameMunicipality;
         private String tradeName;
         private string flag;
@@ -17,7 +19,33 @@ namespace model
         private String typeProduct;
         private double price;
 
+        public PetrolStation()
+        {
+        }
 
+        public PetrolStation(string month, string nameDepartment, double latitude, double longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price)
+        {
+            this.month = month;
+            this.nameDepartment = nameDepartment;
+            this.latitude = latitude;
+            this.longitude = longitude;
+            this.nameMunicipality = nameMunicipality;
+            this.tradeName = tradeName;
+            this.flag = flag;
+            this.addres = addres;
+            this.typeProduct = typeProduct;
+            this.price = price;
+        }
 
+        public string Month { get => month; set => month = value; }
+        public string NameDepartment { get => nameDepartment; set => nameDepartment = value; }
+        public double Latitude { get => latitude; set => latitude = value; }
+        public double Longitude { get => longitude; set => longitude = value; }
+        public string NameMunicipality { get => nameMunicipality; set => nameMunicipality = value; }
+        public string TradeName { get => tradeName; set => tradeName = value; }
+        public string Flag { get => flag; set => flag = value; }
+        public string Addres { get => addres; set => addres = value; }
+        public string TypeProduct { get => typeProduct; set => typeProduct = value; }
+        public double Price { get => price; set => price = value; }
     }
 }
