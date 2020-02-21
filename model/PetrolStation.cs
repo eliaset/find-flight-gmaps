@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    class PetrolStation
+    public  class PetrolStation
     {
 
         // public enum TYPEPRODUCT { BIODISEL_EXTRA, GASOLINA_XTRA_OXIGENADA, GASOLINA_CORRIENTE_OXIGENADA, BIOACEM_AL_9, ACEM_DIESEL_ECOLOGICO, ACPM_DIESEL }

@@ -79,10 +79,22 @@ namespace gmap
 
 
 
-            AddMarker(new PointLatLng(4.570868, -74.2973328), GMarkerGoogleType.green);
-            AddMarker(new PointLatLng(10.9685402, -74.7813187), GMarkerGoogleType.red);
+            
+            //AddMarker(new PointLatLng(4.570868, -74.2973328), GMarkerGoogleType.green);
+            //AddMarker(new PointLatLng(10.9685402, -74.7813187), GMarkerGoogleType.red);
+            int i = 0;
+            foreach (var aux in supplyCenter.PetrolStation)
+            {
 
-             
+                if (i < 100)
+                {
+                
+                Geocoding(aux.NameDepartment,aux.NameMunicipality,aux);
+                
+                    i++;
+                }
+
+            }
 
            
              
@@ -96,30 +108,39 @@ namespace gmap
 
 
 
-        private void AddMarker(PointLatLng pointToAdd, GMarkerGoogleType gMarkerGoogleType)
+        private void AddMarker(PointLatLng pointToAdd, GMarkerGoogleType gMarkerGoogleType,PetrolStation aux)
         {
-            var markers = new GMapOverlay("markers");
-            var marker = new GMarkerGoogle(pointToAdd,gMarkerGoogleType);
-            markers.Markers.Add(marker);
-            gMapC.Overlays.Add(markers);
+            var markerOverlay = new GMapOverlay("markers");
+            var marker = new GMarkerGoogle(pointToAdd, gMarkerGoogleType);
+            markerOverlay.Markers.Add(marker);
 
-        }
+
+            marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+            marker.ToolTipText = String.Format("Mes: " + aux.Month + "\n" + "Departament: " + aux.NameDepartment + "\n" + "Municipio: " + aux.NameMunicipality + "\n" + "Nombre comercial: " + aux.TradeName + "\n" + "Bandera: " + aux.Flag + "\n" + "Direccion: " + aux.Addres + "\n" + "Producto: " + aux.TypeProduct + "\n" + "Precio: " + aux.Price);
+
+            gMapC.Overlays.Add(markerOverlay);
+
+         }
 
        
 
 
 
 
-        private void Geocoding(string nameDepartament, string municipality)
+        private void Geocoding(string nameDepartament, string municipality,PetrolStation aux)
         {
          //geocodificación
             GeoCoderStatusCode statusCode;
-            var dirrecion =nameDepartament+" "+municipality;
-            var pointLatng = OpenCycleMapProvider.Instance.GetPoint(dirrecion.Trim(), out statusCode);
+       
+            var pointLatng = OpenCycleMapProvider.Instance.GetPoint(nameDepartament + " " + municipality, out statusCode);
             
             var lat = pointLatng?.Lat.ToString();
             var lng = pointLatng?.Lng.ToString();
-            AddMarker(new PointLatLng(Double.Parse(lat), Double.Parse(lng)), GMarkerGoogleType.green);
+            if (lat != null && lng != null)
+            {
+            AddMarker(new PointLatLng(Double.Parse(lat), Double.Parse(lng)), GMarkerGoogleType.green, aux);
+            }
+
         }
     
 

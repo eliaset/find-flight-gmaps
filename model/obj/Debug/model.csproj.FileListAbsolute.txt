@@ -13,3 +13,8 @@ C:\Users\1006188503\Source\Repos\price-gasoline-gmaps\model\obj\Debug\model.dll
 C:\Users\1006188503\Source\Repos\price-gasoline-gmaps\model\obj\Debug\model.pdb
 C:\Users\1006188503\Source\Repos\price-gasoline-gmaps\model\bin\Debug\model.dll
 C:\Users\1006188503\Source\Repos\price-gasoline-gmaps\model\bin\Debug\model.pdb
+D:\Usuarios\1006188503\Source\Repos\price-gasoline-gmaps\model\bin\Debug\model.dll
+D:\Usuarios\1006188503\Source\Repos\price-gasoline-gmaps\model\bin\Debug\model.pdb
+D:\Usuarios\1006188503\Source\Repos\price-gasoline-gmaps\model\obj\Debug\model.csprojAssemblyReference.cache
+D:\Usuarios\1006188503\Source\Repos\price-gasoline-gmaps\model\obj\Debug\model.dll
+D:\Usuarios\1006188503\Source\Repos\price-gasoline-gmaps\model\obj\Debug\model.pdb

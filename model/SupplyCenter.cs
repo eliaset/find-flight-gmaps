@@ -17,9 +17,10 @@ namespace model
 
         private List<PetrolStation> petrolStation;
 
+        
         public SupplyCenter()
         {
-            petrolStation = new List<PetrolStation>();
+            PetrolStation = new List<PetrolStation>();
 
         }
 
@@ -46,7 +47,7 @@ namespace model
                 double price = Double.Parse(values[1]);
 
 
-                petrolStation.Add(new PetrolStation(month, nameDepartment, nameMunicipality, tradeName, flag, addres, typeProduct, price));
+                PetrolStation.Add(new PetrolStation(month, nameDepartment, nameMunicipality, tradeName, flag, addres, typeProduct, price));
                 line = sr.ReadLine();
             }///Fin
 
@@ -74,6 +75,7 @@ namespace model
         public void addPetrolStation(string month, string nameDepartment, string latitude, string longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price) {
            
         }
+        public List<PetrolStation> PetrolStation { get => petrolStation; set => petrolStation = value; }
 
 
     }
