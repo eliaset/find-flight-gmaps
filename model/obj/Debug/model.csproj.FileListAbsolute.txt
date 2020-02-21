@@ -1,0 +1,5 @@
+C:\Users\Eli\source\repos\price-gasoline-gmaps\model\bin\Debug\model.dll
+C:\Users\Eli\source\repos\price-gasoline-gmaps\model\bin\Debug\model.pdb
+C:\Users\Eli\source\repos\price-gasoline-gmaps\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\Eli\source\repos\price-gasoline-gmaps\model\obj\Debug\model.dll
+C:\Users\Eli\source\repos\price-gasoline-gmaps\model\obj\Debug\model.pdb

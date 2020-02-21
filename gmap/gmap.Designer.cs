@@ -44,7 +44,7 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(3, 4);
+            this.gMapControl1.Location = new System.Drawing.Point(2, 4);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -58,9 +58,10 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(611, 518);
+            this.gMapControl1.Size = new System.Drawing.Size(615, 527);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // textBox1
             // 
@@ -77,6 +78,7 @@
             this.btSearchStation.TabIndex = 2;
             this.btSearchStation.Text = "Buscar Estación";
             this.btSearchStation.UseVisualStyleBackColor = true;
+            this.btSearchStation.Click += new System.EventHandler(this.btSearchStation_Click);
             // 
             // cbFilter
             // 
@@ -85,6 +87,7 @@
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 3;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // btClearFilter
             // 
@@ -94,6 +97,7 @@
             this.btClearFilter.TabIndex = 4;
             this.btClearFilter.Text = "Limpiar";
             this.btClearFilter.UseVisualStyleBackColor = true;
+            this.btClearFilter.Click += new System.EventHandler(this.btClearFilter_Click);
             // 
             // btClearStation
             // 
@@ -103,6 +107,7 @@
             this.btClearStation.TabIndex = 5;
             this.btClearStation.Text = "Limpiar";
             this.btClearStation.UseVisualStyleBackColor = true;
+            this.btClearStation.Click += new System.EventHandler(this.btClearStation_Click);
             // 
             // gmap
             // 
