@@ -61,7 +61,7 @@
             this.gMapC.Size = new System.Drawing.Size(615, 527);
             this.gMapC.TabIndex = 0;
             this.gMapC.Zoom = 0D;
-            this.gMapC.Load += new System.EventHandler(this.gMapControl1_Load);
+            
             // 
             // textBox1
             // 

@@ -72,6 +72,110 @@ namespace model
         }
         **/
 
+        /**
+         * This method permited fill by month
+         */
+        public List<PetrolStation> SearchByMonth(string month){
+            List<PetrolStation> aux = new List<PetrolStation>();
+          
+            foreach (PetrolStation value in aux)
+            {
+                if (value.Month.Equals(month))
+                {
+                    aux.Add(value);
+                }
+            }
+            
+          return aux;
+
+        }
+
+        
+        /**
+        * This method permited fill by municipality
+        */
+        public List<PetrolStation> SearchByMunicipality(string municipality)
+        {
+            List<PetrolStation> aux = new List<PetrolStation>();
+
+            foreach (PetrolStation value in aux)
+            {
+                if (value.NameMunicipality.Equals(municipality))
+                {
+                    aux.Add(value);
+                }
+            }
+
+            return aux;
+
+        }
+
+        /**
+       * This method permited fill by flag
+       */
+        public List<PetrolStation> SearchByFlag(string flag)
+        {
+            List<PetrolStation> aux = new List<PetrolStation>();
+
+            foreach (PetrolStation value in aux)
+            {
+                if (value.Flag.Equals(flag))
+                {
+                    aux.Add(value);
+                }
+            }
+
+            return aux;
+
+        }
+
+
+        /**
+    * This method permited fill by product
+    */
+        public List<PetrolStation> SearcByProduct(string product)
+        {
+            List<PetrolStation> aux = new List<PetrolStation>();
+
+            foreach (PetrolStation value in aux)
+            {
+                if (value.TypeProduct.Equals(product))
+                {
+                    
+                    aux.Add(value);
+                }
+            }
+
+            return aux;
+
+        }
+
+
+
+        /**
+ * This method permited fill by product
+ */
+        public List<PetrolStation> SearcByPrice(string price)
+        {
+            List<PetrolStation> aux = new List<PetrolStation>();
+
+            foreach (PetrolStation value in aux)
+            {
+                if (value.Price.Equals(price))
+                {
+
+                    aux.Add(value);
+                }
+            }
+
+            return aux;
+
+        }
+
+
+
+
+
         public void addPetrolStation(string month, string nameDepartment, string latitude, string longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price) {
            
         }

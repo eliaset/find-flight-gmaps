@@ -40,10 +40,7 @@ namespace gmap
 
         }
 
-        private void gMapControl1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btSearchStation_Click(object sender, EventArgs e)
         {
@@ -80,8 +77,7 @@ namespace gmap
 
 
             
-            //AddMarker(new PointLatLng(4.570868, -74.2973328), GMarkerGoogleType.green);
-            //AddMarker(new PointLatLng(10.9685402, -74.7813187), GMarkerGoogleType.red);
+    
             int i = 0;
             foreach (var aux in supplyCenter.PetrolStation)
             {
@@ -126,7 +122,12 @@ namespace gmap
 
 
 
-
+        /// <summary>
+        /// Permite realizar la geocodificacion es decir, que permite pasar la dirección de un lugar a codigo.
+        /// </summary>
+        /// <param name="nameDepartament"></param> nombre del departamento donde se encuentra la estación de gasolina.
+        /// <param name="municipality"></param> nombre del municipio donde se encuentra la estación  de gasolina.
+        /// <param name="aux"></param>  
         private void Geocoding(string nameDepartament, string municipality,PetrolStation aux)
         {
          //geocodificación
