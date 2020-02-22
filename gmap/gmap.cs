@@ -24,12 +24,6 @@ namespace gmap
         {
             InitializeComponent();
 
-            cbFilter.Items.Add("Mes");
-            cbFilter.Items.Add("Municipio");
-            cbFilter.Items.Add("Bandera");
-            cbFilter.Items.Add("Producto");
-            cbFilter.Items.Add("Precio");
-
             supplyCenter = new SupplyCenter();
         }
 
@@ -39,10 +33,7 @@ namespace gmap
 
         }
 
-        private void gMapControl1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btSearchStation_Click(object sender, EventArgs e)
         {
@@ -56,7 +47,11 @@ namespace gmap
 
         private void btClearFilter_Click(object sender, EventArgs e)
         {
-
+            rbMonth.Enabled = true;
+            rbMunicipaly.Enabled = true;
+            rbPrice.Enabled = true;
+            rbProduct.Enabled = true;
+            rbFlag.Enabled = true;
         }
 
         private void gmap_Load(object sender, EventArgs e)
@@ -79,8 +74,7 @@ namespace gmap
 
 
             
-            //AddMarker(new PointLatLng(4.570868, -74.2973328), GMarkerGoogleType.green);
-            //AddMarker(new PointLatLng(10.9685402, -74.7813187), GMarkerGoogleType.red);
+    
             int i = 0;
             foreach (var aux in supplyCenter.PetrolStation)
             {
@@ -125,7 +119,12 @@ namespace gmap
 
 
 
-
+        /// <summary>
+        /// Permite realizar la geocodificacion es decir, que permite pasar la dirección de un lugar a codigo.
+        /// </summary>
+        /// <param name="nameDepartament"></param> nombre del departamento donde se encuentra la estación de gasolina.
+        /// <param name="municipality"></param> nombre del municipio donde se encuentra la estación  de gasolina.
+        /// <param name="aux"></param>  
         private void Geocoding(string nameDepartament, string municipality,PetrolStation aux)
         {
          //geocodificación
@@ -145,18 +144,11 @@ namespace gmap
         private void rbMonth_CheckedChanged(object sender, EventArgs e)
         {
 
-                cbFilter.Items.Add("ENERO");
-                cbFilter.Items.Add("FEBRERO");
-                cbFilter.Items.Add("MARZO");
-                cbFilter.Items.Add("ABRIL");
-                cbFilter.Items.Add("MAYO");
-                cbFilter.Items.Add("JUNIO");
-                cbFilter.Items.Add("JULIO");
-                cbFilter.Items.Add("AGOSTO");
-                cbFilter.Items.Add("SEPTIEMBRE");
-                cbFilter.Items.Add("OCTUBRE");
-                cbFilter.Items.Add("NOVIEMBRE");
-                cbFilter.Items.Add("DICIEMBRE");
+            cbFilter.Items.Clear();
+            foreach (String m in supplyCenter.getMonths())
+            {
+                cbFilter.Items.Add(m.ToUpper());    
+            }
 
             rbMunicipaly.Enabled=false;
             rbFlag.Enabled=false;
@@ -164,8 +156,60 @@ namespace gmap
             rbProduct.Enabled=false;
   
 
+        }
+
+        private void rbMunicipaly_CheckedChanged(object sender, EventArgs e)
+        {
+
+            cbFilter.Items.Clear();
+            foreach (String m in supplyCenter.getMunicipalies())
+            {
+                cbFilter.Items.Add(m.ToUpper());
+            }
+
+            rbMonth.Enabled = false;
+            rbFlag.Enabled = false;
+            rbPrice.Enabled = false;
+            rbProduct.Enabled = false;
 
 
+        }
+
+        private void rbFlag_CheckedChanged(object sender, EventArgs e)
+        {
+            cbFilter.Items.Clear();
+            foreach (String m in supplyCenter.getFlags())
+            {
+                cbFilter.Items.Add(m.ToUpper());
+            }
+
+            rbMonth.Enabled = false;
+            rbMunicipaly.Enabled = false;
+            rbPrice.Enabled = false;
+            rbProduct.Enabled = false;
+        }
+
+        private void rbProduct_CheckedChanged(object sender, EventArgs e)
+        {
+            cbFilter.Items.Clear();
+            foreach (String m in supplyCenter.getProducts())
+            {
+                cbFilter.Items.Add(m.ToUpper());
+            }
+
+            rbMonth.Enabled = false;
+            rbFlag.Enabled = false;
+            rbPrice.Enabled = false;
+            rbMunicipaly.Enabled = false;
+        }
+
+        private void rbPrice_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btFilter_Click(object sender, EventArgs e)
+        {
 
         }
     }
