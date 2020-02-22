@@ -55,30 +55,11 @@ namespace model
 
 
         }
-        /**
-        public List<PetrolStation> SearchByStation(string name){
-            List<PetrolStation> aux = new List<PetrolStation>();
-          
-            foreach (PetrolStation value in aux)
-            {
-                if (value.Flag.Equals(name))
-                {
-                    aux.Add(value);
-                }
-            }
-            
-          return aux;
-
-        }
-        **/
-
-        /**
-         * This method permited fill by month
-         */
+        
         public List<PetrolStation> SearchByMonth(string month){
             List<PetrolStation> aux = new List<PetrolStation>();
           
-            foreach (PetrolStation value in aux)
+            foreach (PetrolStation value in petrolStations)
             {
                 if (value.Month.Equals(month))
                 {

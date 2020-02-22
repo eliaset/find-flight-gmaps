@@ -82,7 +82,7 @@ namespace gmap
                 if (i < 100)
                 {
                 
-                Geocoding(aux.NameDepartment,aux.NameMunicipality,aux);
+                Geocoding(aux.NameDepartment,aux.NameMunicipality,aux,GMarkerGoogleType.green);
                 
                     i++;
                 }
@@ -125,7 +125,7 @@ namespace gmap
         /// <param name="nameDepartament"></param> nombre del departamento donde se encuentra la estación de gasolina.
         /// <param name="municipality"></param> nombre del municipio donde se encuentra la estación  de gasolina.
         /// <param name="aux"></param>  
-        private void Geocoding(string nameDepartament, string municipality,PetrolStation aux)
+        private void Geocoding(string nameDepartament, string municipality,PetrolStation aux, GMarkerGoogleType type)
         {
          //geocodificación
             GeoCoderStatusCode statusCode;
@@ -136,7 +136,7 @@ namespace gmap
             var lng = pointLatng?.Lng.ToString();
             if (lat != null && lng != null)
             {
-            AddMarker(new PointLatLng(Double.Parse(lat), Double.Parse(lng)), GMarkerGoogleType.green, aux);
+            AddMarker(new PointLatLng(Double.Parse(lat), Double.Parse(lng)), type, aux);
             }
 
         }
@@ -147,7 +147,7 @@ namespace gmap
             cbFilter.Items.Clear();
             foreach (String m in supplyCenter.getMonths())
             {
-                cbFilter.Items.Add(m.ToUpper());    
+                cbFilter.Items.Add(m);    
             }
 
             rbMunicipaly.Enabled=false;
@@ -210,7 +210,31 @@ namespace gmap
 
         private void btFilter_Click(object sender, EventArgs e)
         {
+            gMapC.Overlays.Clear();
+            String element = cbFilter.Text;
+
+
+            if (rbMonth.Enabled)
+            {
+                var list = supplyCenter.SearchByMonth(element);
+                int i = 0;
+                foreach (PetrolStation aux in list)
+                {
+                    if (i < 100)
+                    {
+                      
+                        Geocoding(aux.NameDepartment, aux.NameMunicipality, aux, GMarkerGoogleType.blue);
+
+                        i++;
+                    }
+                }
+
+            }
 
         }
+
+
+
+
     }
 }
