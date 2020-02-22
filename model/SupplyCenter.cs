@@ -210,6 +210,71 @@ namespace model
             return products;
         }
 
+        public List<PetrolStation> getMinorPrices()
+        {
+            List<PetrolStation> minors = new List<PetrolStation>();
+
+            foreach (PetrolStation ps in petrolStations)
+            {
+
+                if (ps.Price <= 50.0)
+                {
+                    minors.Add(ps);
+                }
+            }
+            return minors;
+        }
+
+
+        public List<PetrolStation> getMajorsPrices()
+        {
+            List<PetrolStation> majors = new List<PetrolStation>();
+
+            foreach (PetrolStation ps in petrolStations)
+            {
+
+                if (ps.Price > 50.0)
+                {
+                    majors.Add(ps);
+                }
+            }
+            return majors;
+        }
+
+
+        public PetrolStation getMaxPrice()
+        {
+
+            PetrolStation max = null;
+            double m = petrolStations.Select(ps => ps.Price).Max();
+            foreach (PetrolStation ps in petrolStations)
+            {
+                if (ps.Price == m)
+                {
+                    max = ps;
+                }
+
+            }
+            return max;
+        }
+
+
+        public PetrolStation getMinPrice()
+        {
+
+            PetrolStation min = null;
+            double m = petrolStations.Select(ps => ps.Price).Min();
+            foreach (PetrolStation ps in petrolStations)
+            {
+                if (ps.Price == m)
+                {
+                    min = ps;
+                }
+
+            }
+            return min;
+
+        }
 
 
 

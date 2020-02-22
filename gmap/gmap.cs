@@ -52,7 +52,9 @@ namespace gmap
             rbPrice.Enabled = true;
             rbProduct.Enabled = true;
             rbFlag.Enabled = true;
-            cbFilter.Items.Clear();
+
+        
+           
             gMapC.Overlays.Clear();
             
         }
@@ -68,7 +70,7 @@ namespace gmap
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapC.MinZoom = 2;
             gMapC.MaxZoom = 18;
-            gMapC.Zoom = 5;
+            gMapC.Zoom = 6;
             //Fin
 
 
@@ -208,6 +210,16 @@ namespace gmap
 
         private void rbPrice_CheckedChanged(object sender, EventArgs e)
         {
+            cbFilter.Items.Add("Del Mínimo al Promedio ");
+            cbFilter.Items.Add("Del Promedio al Máximo ");
+            cbFilter.Items.Add("El Máximo ");
+            cbFilter.Items.Add("El Mínimo ");
+
+            
+            rbMonth.Enabled = false;
+            rbFlag.Enabled = false;
+            rbProduct.Enabled = false;
+            rbMunicipaly.Enabled = false;
 
         }
 
@@ -275,6 +287,54 @@ namespace gmap
 
                         i++;
                     }
+                }
+            }else if (rbPrice.Enabled)
+            {
+                if (cbFilter.Text.Equals("Del Mínimo al Promedio "))
+                {
+                    var list = supplyCenter.getMinorPrices();
+                    int i = 0;
+                    foreach (PetrolStation aux in list)
+                    {
+                        if (i < 100)
+                        {
+
+                            Geocoding(aux.NameDepartment, aux.NameMunicipality, aux, GMarkerGoogleType.red_small);
+
+                            i++;
+                        }
+                    }
+
+                }
+                else if (cbFilter.Text.Equals("Del Promedio al Máximo ")) {
+                    var list = supplyCenter.getMajorsPrices();
+                    int i = 0;
+                    foreach (PetrolStation aux in list)
+                    {
+                        if (i < 100)
+                        {
+
+                            Geocoding(aux.NameDepartment, aux.NameMunicipality, aux, GMarkerGoogleType.red_small);
+
+                            i++;
+                        }
+                    }
+
+                }
+                else if (cbFilter.Text.Equals("El Máximo ")) {
+                    var value = supplyCenter.getMaxPrice();
+                  
+
+                     Geocoding(value.NameDepartment, value.NameMunicipality, value, GMarkerGoogleType.red_dot);
+
+                      
+
+                }
+                else if (cbFilter.Text.Equals("El Mínimo "))
+                {
+                    var value = supplyCenter.getMinPrice();
+                    Geocoding(value.NameDepartment, value.NameMunicipality, value, GMarkerGoogleType.red_dot);
+
                 }
             }
 
