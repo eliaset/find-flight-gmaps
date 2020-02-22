@@ -32,6 +32,7 @@ namespace model
             string line = sr.ReadLine();
             line = sr.ReadLine();
             ///Inicio
+            
             while (line != null)
             {
                 String[] elements = line.Split(';');
@@ -49,6 +50,7 @@ namespace model
 
                 PetrolStation.Add(new PetrolStation(month, nameDepartment, nameMunicipality, tradeName, flag, addres, typeProduct, price));
                 line = sr.ReadLine();
+             
             }///Fin
 
 
@@ -79,7 +81,7 @@ namespace model
         {
             List<PetrolStation> aux = new List<PetrolStation>();
 
-            foreach (PetrolStation value in aux)
+            foreach (PetrolStation value in petrolStations)
             {
                 if (value.NameMunicipality.Equals(municipality))
                 {
@@ -98,7 +100,7 @@ namespace model
         {
             List<PetrolStation> aux = new List<PetrolStation>();
 
-            foreach (PetrolStation value in aux)
+            foreach (PetrolStation value in petrolStations)
             {
                 if (value.Flag.Equals(flag))
                 {
@@ -118,7 +120,7 @@ namespace model
         {
             List<PetrolStation> aux = new List<PetrolStation>();
 
-            foreach (PetrolStation value in aux)
+            foreach (PetrolStation value in petrolStations)
             {
                 if (value.TypeProduct.Equals(product))
                 {

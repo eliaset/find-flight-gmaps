@@ -52,6 +52,9 @@ namespace gmap
             rbPrice.Enabled = true;
             rbProduct.Enabled = true;
             rbFlag.Enabled = true;
+            cbFilter.Items.Clear();
+            gMapC.Overlays.Clear();
+            
         }
 
         private void gmap_Load(object sender, EventArgs e)
@@ -164,7 +167,7 @@ namespace gmap
             cbFilter.Items.Clear();
             foreach (String m in supplyCenter.getMunicipalies())
             {
-                cbFilter.Items.Add(m.ToUpper());
+                cbFilter.Items.Add(m);
             }
 
             rbMonth.Enabled = false;
@@ -180,7 +183,7 @@ namespace gmap
             cbFilter.Items.Clear();
             foreach (String m in supplyCenter.getFlags())
             {
-                cbFilter.Items.Add(m.ToUpper());
+                cbFilter.Items.Add(m);
             }
 
             rbMonth.Enabled = false;
@@ -194,7 +197,7 @@ namespace gmap
             cbFilter.Items.Clear();
             foreach (String m in supplyCenter.getProducts())
             {
-                cbFilter.Items.Add(m.ToUpper());
+                cbFilter.Items.Add(m);
             }
 
             rbMonth.Enabled = false;
@@ -229,6 +232,50 @@ namespace gmap
                     }
                 }
 
+            }else if (rbMunicipaly.Enabled)
+            {
+                var list = supplyCenter.SearchByMunicipality(element);
+                int i = 0;
+                foreach (PetrolStation aux in list)
+                {
+                    if (i < 100)
+                    {
+
+                        Geocoding(aux.NameDepartment, aux.NameMunicipality, aux, GMarkerGoogleType.yellow);
+
+                        i++;
+                    }
+                }
+            }else if (rbFlag.Enabled)
+            {
+                var list = supplyCenter.SearchByFlag(element);
+                int i = 0;
+                foreach (PetrolStation aux in list)
+                {
+                    if (i < 100)
+                    {
+
+                        Geocoding(aux.NameDepartment, aux.NameMunicipality, aux, GMarkerGoogleType.orange);
+
+                        i++;
+                    }
+                }
+            }else if (rbProduct.Enabled)
+            {
+
+
+                var list = supplyCenter.SearcByProduct(element);
+                int i = 0;
+                foreach (PetrolStation aux in list)
+                {
+                    if (i < 100)
+                    {
+
+                        Geocoding(aux.NameDepartment, aux.NameMunicipality, aux, GMarkerGoogleType.red_small);
+
+                        i++;
+                    }
+                }
             }
 
         }
