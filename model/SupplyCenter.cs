@@ -15,7 +15,7 @@ namespace model
 
 
 
-        private List<PetrolStation> petrolStation;
+        private List<PetrolStation> petrolStations;
 
         
         public SupplyCenter()
@@ -179,7 +179,57 @@ namespace model
         public void addPetrolStation(string month, string nameDepartment, string latitude, string longitude, string nameMunicipality, string tradeName, string flag, string addres, string typeProduct, double price) {
            
         }
-        public List<PetrolStation> PetrolStation { get => petrolStation; set => petrolStation = value; }
+        public List<PetrolStation> PetrolStation { get => petrolStations; set => petrolStations = value; }
+
+
+
+        public List<String> getMonths() 
+        {
+            List<String> months = new List<string>();
+            var m = petrolStations.Select(ps => ps.Month).Distinct().ToList();
+            foreach (String ps in m) {
+                months.Add(ps);
+            }
+            return months;
+        }
+
+        public List<String> getMunicipalies()
+        {
+            List<String> municipalies = new List<string>();
+            var m = petrolStations.Select(ps => ps.NameMunicipality).Distinct().ToList();
+            foreach (String ps in m)
+            {
+                municipalies.Add(ps);
+            }
+            return municipalies;
+        }
+
+
+        public List<String> getFlags()
+        {
+            List<String> flags = new List<string>();
+            var m = petrolStations.Select(ps => ps.Flag).Distinct().ToList();
+            foreach (String ps in m)
+            {
+                flags.Add(ps);
+            }
+            return flags;
+        }
+
+        public List<String> getProducts()
+        {
+            List<String> products = new List<string>();
+            var m = petrolStations.Select(ps => ps.TypeProduct).Distinct().ToList();
+            foreach (String ps in m)
+            {
+                products.Add(ps);
+            }
+            return products;
+        }
+
+
+
+
 
 
     }

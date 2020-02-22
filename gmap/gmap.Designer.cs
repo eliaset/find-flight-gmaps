@@ -65,7 +65,6 @@
             this.gMapC.Size = new System.Drawing.Size(615, 527);
             this.gMapC.TabIndex = 0;
             this.gMapC.Zoom = 0D;
-            
             // 
             // cbFilter
             // 
@@ -108,6 +107,7 @@
             this.rbMunicipaly.TabStop = true;
             this.rbMunicipaly.Text = "Municipio";
             this.rbMunicipaly.UseVisualStyleBackColor = true;
+            this.rbMunicipaly.CheckedChanged += new System.EventHandler(this.rbMunicipaly_CheckedChanged);
             // 
             // rbFlag
             // 
@@ -119,6 +119,7 @@
             this.rbFlag.TabStop = true;
             this.rbFlag.Text = "Bandera ";
             this.rbFlag.UseVisualStyleBackColor = true;
+            this.rbFlag.CheckedChanged += new System.EventHandler(this.rbFlag_CheckedChanged);
             // 
             // rbProduct
             // 
@@ -130,6 +131,7 @@
             this.rbProduct.TabStop = true;
             this.rbProduct.Text = "Producto";
             this.rbProduct.UseVisualStyleBackColor = true;
+            this.rbProduct.CheckedChanged += new System.EventHandler(this.rbProduct_CheckedChanged);
             // 
             // rbPrice
             // 
@@ -141,6 +143,7 @@
             this.rbPrice.TabStop = true;
             this.rbPrice.Text = "Precio";
             this.rbPrice.UseVisualStyleBackColor = true;
+            this.rbPrice.CheckedChanged += new System.EventHandler(this.rbPrice_CheckedChanged);
             // 
             // label1
             // 
@@ -160,6 +163,7 @@
             this.btFilter.TabIndex = 12;
             this.btFilter.Text = "Filtrar";
             this.btFilter.UseVisualStyleBackColor = true;
+            this.btFilter.Click += new System.EventHandler(this.btFilter_Click);
             // 
             // gmap
             // 
